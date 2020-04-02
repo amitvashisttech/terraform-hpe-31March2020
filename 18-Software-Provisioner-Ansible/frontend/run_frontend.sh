@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt update
-apt install -y python sshpass
+apt install -y python
 #systemctl restart apache2.service
 #cp -a ./index.html /var/www/html/
 #cp -a ./app.py /var/www/html/

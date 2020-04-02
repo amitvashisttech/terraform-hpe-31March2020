@@ -11,7 +11,7 @@ locals {
 }
 
 resource "google_compute_instance" "vm_instance" {
-  name         = "default"
+  name         = "default-test"
   machine_type = "f1-micro"
 
   boot_disk {
@@ -59,6 +59,11 @@ resource "google_compute_firewall" "default" {
    protocol = "tcp"
    ports    = ["5000","80","443"]
  }
+
+ lifecycle {
+    ignore_changes = ["*"]
+}
+
 }
 
 resource "null_resource" "ansible-main" {
